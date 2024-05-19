@@ -1,0 +1,21 @@
+{
+  "reviews": [
+    {
+      "username": "test1",
+      "reviewList": [
+        {
+          "restaurantName": "place1",
+          "reviewScore": 1,
+          "description": "설명1",
+          "createdAt": "2024.01.01"
+        },
+        {
+          "restaurantName": "place2",
+          "reviewScore": 2,
+          "description": "설명2",
+          "createdAt": "2024.02.01"
+        }
+      ]
+    }
+  ]
+}
