@@ -20,7 +20,7 @@ public class ReviewController {
     private final ReviewRepository reviewRepository;
 
     //public static final String JSON_NAME = "test.json";
-    public static final String JSON_NAME = "user_reviews_dict_new.json";
+    public static final String JSON_NAME = "user_reviews_dict_normalized.json";
     public void saveAll() {
         URL resource = getClass().getClassLoader().getResource(JSON_NAME);
         String filePath = resource.getFile();

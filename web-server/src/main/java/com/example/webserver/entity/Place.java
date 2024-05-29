@@ -1,5 +1,6 @@
 package com.example.webserver.entity;
 
+import com.example.webserver.dto.GetPlacePagesResponse;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -21,13 +22,17 @@ public class Place {
 
     double averageNormScore;
 
-    public Place(String name, Double averageScore) {
+    public Place(String name, Double averageScore, Double averageNormScore) {
         this.name = name;
-        this.averageScore = 0;
-        this.averageNormScore = 0;
+        this.averageScore = averageScore;
+        this.averageNormScore = averageNormScore;
     }
 
     public void setId(Long id) {
         if (this.id == null) this.id = id;
+    }
+
+    public GetPlacePagesResponse mapToDto() {
+        return new GetPlacePagesResponse(this.name, this.averageScore, this.averageNormScore);
     }
 }

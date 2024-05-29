@@ -25,7 +25,7 @@ public class Review {
 
     int reviewScore;
 
-    int normReviewScore;
+    double normReviewScore;
 
     @ManyToOne
     @JoinColumn(name = "place_id", nullable = false)
@@ -36,10 +36,11 @@ public class Review {
     User user;
 
     @Builder
-    public Review(String description, LocalDate createdAt, int reviewScore, Place place, User user) {
+    public Review(String description, LocalDate createdAt, int reviewScore, double normReviewScore, Place place, User user) {
         this.description = description;
         this.createdAt = createdAt;
         this.reviewScore = reviewScore;
+        this.normReviewScore = normReviewScore;
         this.place = place;
         this.user = user;
     }

@@ -13,6 +13,7 @@ public record SaveAllRequest(
             public record ReviewDto(
                     String restaurantName,
                     int reviewScore,
+                    double normalizedScore,
                     String description,
                     String createdAt
             ) {}

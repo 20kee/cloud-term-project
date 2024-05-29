@@ -16,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
 @Service
@@ -75,6 +76,7 @@ public class ReviewService {
                 reviews.add(Review.builder().user(findUserByUsername.get(dto.username()))
                         .place(findPlaceByPlaceName.get(review.restaurantName()))
                         .reviewScore(review.reviewScore())
+                        .normReviewScore(review.normalizedScore())
                         .description(review.description())
                         .createdAt(LocalDate.parse(review.createdAt(), formatter)).build());
             }
@@ -92,7 +94,8 @@ public class ReviewService {
                 .entrySet().stream()
                 .map(entry -> new Place(
                         entry.getKey(),  // 레스토랑 이름
-                        calculateAverageRating(entry.getValue())  // 해당 레스토랑의 평균 점수 계산
+                        calculateAverageRating(entry.getValue(), ReviewDto::reviewScore),  // 해당 레스토랑의 평균 점수 계산
+                        calculateAverageRating(entry.getValue(), ReviewDto::normalizedScore)
                 ))
                 .toList();
         placeRepository.saveAll(places);
@@ -103,7 +106,7 @@ public class ReviewService {
         List<User> users = reviewUsernames.stream()
                 .map(dto -> new User(
                         dto.username(),
-                        calculateAverageRating(dto.reviewList())
+                        calculateAverageRating(dto.reviewList(), ReviewDto::reviewScore)
                 ))
                 .collect(Collectors.toList());
 
@@ -111,12 +114,12 @@ public class ReviewService {
         return users;
     }
 
-    private double calculateAverageRating(List<ReviewDto> reviews) {
+    private double calculateAverageRating(List<ReviewDto> reviews, ToDoubleFunction<ReviewDto> getter) {
         if (reviews == null || reviews.isEmpty()) {
             return 0.0;
         }
         return reviews.stream()
-                .mapToInt(ReviewDto::reviewScore)
+                .mapToDouble(getter::applyAsDouble)
                 .average()
                 .orElse(0.0);
     }
@@ -148,7 +151,7 @@ public class ReviewService {
     }
 
     private Place savePlace(String placeName) {
-        Place place = new Place(placeName, 0.0);
+        Place place = new Place(placeName, 0.0, 0.0);
         return placeRepository.save(place);
     }
 }
