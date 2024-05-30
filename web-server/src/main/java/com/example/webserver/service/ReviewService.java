@@ -1,8 +1,9 @@
 package com.example.webserver.service;
 
-import com.example.webserver.dto.SaveAllRequest;
-import com.example.webserver.dto.SaveAllRequest.ReviewUsernameDto;
-import com.example.webserver.dto.SaveAllRequest.ReviewUsernameDto.ReviewDto;
+import com.example.webserver.dto.init.RestaurantList;
+import com.example.webserver.dto.init.SaveAllRequest;
+import com.example.webserver.dto.init.SaveAllRequest.ReviewUsernameDto;
+import com.example.webserver.dto.init.SaveAllRequest.ReviewUsernameDto.ReviewDto;
 import com.example.webserver.entity.Place;
 import com.example.webserver.entity.Review;
 import com.example.webserver.entity.User;
@@ -45,10 +46,10 @@ public class ReviewService {
     }
 
     @Transactional
-    public void bulkSaveAll(List<ReviewUsernameDto> reviewUsernames) {
+    public void bulkSaveAll(List<ReviewUsernameDto> reviewUsernames, Map<String, RestaurantList.RestaurantInfo> restaurantInfo) {
         List<User> users = bulkSaveUser(reviewUsernames);
         System.out.println("유저 수 : " + users.size());
-        List<Place> places = bulkSavePlace(reviewUsernames);
+        List<Place> places = bulkSavePlace(reviewUsernames, restaurantInfo);
         System.out.println("플레이스 수 : " + places.size());
         List<Review> reviews = bulkSaveReviews(users, places, reviewUsernames);
         System.out.println("리뷰 수 : " + reviews.size());
@@ -87,16 +88,30 @@ public class ReviewService {
         return reviews;
     }
 
-    private List<Place> bulkSavePlace(List<ReviewUsernameDto> reviewUsernames) {
+    private List<Place> bulkSavePlace(List<ReviewUsernameDto> reviewUsernames, Map<String, RestaurantList.RestaurantInfo> maps) {
         List<Place> places = reviewUsernames.stream()
                 .flatMap(dto -> dto.reviewList().stream())
                 .collect(Collectors.groupingBy(ReviewDto::restaurantName))
                 .entrySet().stream()
-                .map(entry -> new Place(
-                        entry.getKey(),  // 레스토랑 이름
-                        calculateAverageRating(entry.getValue(), ReviewDto::reviewScore),  // 해당 레스토랑의 평균 점수 계산
-                        calculateAverageRating(entry.getValue(), ReviewDto::normalizedScore)
-                ))
+                //.filter(entry -> entry.getValue().size() >= 10) //리뷰가 10개 이상인 식당만
+                .map(entry -> {
+                    boolean isNearByPNU = maps.containsKey(entry.getKey());
+                    if (isNearByPNU) return Place.builder()
+                                    .isNearByPNU(isNearByPNU)
+                                    .tags(maps.get(entry.getKey()).tags())
+                                    .reviewNumber(Long.parseLong(maps.get(entry.getKey()).reviewCount().replace(",", "")))
+                                    .averageScore(Double.parseDouble(maps.get(entry.getKey()).averageScore()))
+                                    .averageNormScore(calculateAverageRating(entry.getValue(), ReviewDto::normalizedScore))
+                                    .name(entry.getKey())
+                                    .address1(maps.get(entry.getKey()).address1())
+                                    .address2(maps.get(entry.getKey()).address2())
+                                    .build();
+                    else return new Place(entry.getKey(),
+                            entry.getValue().size(),
+                            calculateAverageRating(entry.getValue(), ReviewDto::reviewScore),
+                            calculateAverageRating(entry.getValue(), ReviewDto::normalizedScore));
+                        }
+                )
                 .toList();
         placeRepository.saveAll(places);
         return places;
@@ -151,7 +166,7 @@ public class ReviewService {
     }
 
     private Place savePlace(String placeName) {
-        Place place = new Place(placeName, 0.0, 0.0);
+        Place place = new Place(placeName, 0, 0.0, 0.0);
         return placeRepository.save(place);
     }
 }

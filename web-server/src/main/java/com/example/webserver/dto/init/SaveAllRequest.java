@@ -1,4 +1,4 @@
-package com.example.webserver.dto;
+package com.example.webserver.dto.init;
 
 import java.time.LocalDateTime;
 import java.util.List;
