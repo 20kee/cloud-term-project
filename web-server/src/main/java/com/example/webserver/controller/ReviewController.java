@@ -25,6 +25,8 @@ public class ReviewController {
     //public static final String JSON_NAME = "test.json";
     public static final String REVIEW_JSON_NAME = "user_reviews_dict_normalized.json";
     public static final String PLACE_JSON_NAME = "restaurant.json";
+
+    public static final String PLACE_REVIEW_JSON_NAME = "restaurant_review_dict.json";
     public void saveAll() {
         ObjectMapper mapper = new ObjectMapper();
 

@@ -13,5 +13,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
         resolvers.add(new PlacePageableMethodArgumentResolver());
+        resolvers.add(new ReviewPageableMethodArgumentResolver());
     }
 }

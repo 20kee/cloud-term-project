@@ -1,5 +1,6 @@
 package com.example.webserver.entity;
 
+import com.example.webserver.dto.review.GetReviewsPagesResponse;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -15,15 +16,15 @@ import java.time.LocalDate;
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String description;
+    private String description;
 
-    LocalDate createdAt;
+    private LocalDate createdAt;
 
-    int reviewScore;
+    private int reviewScore;
 
-    double normReviewScore;
+    private double normReviewScore;
 
     @ManyToOne
     @JoinColumn(name = "place_id", nullable = false)
@@ -45,5 +46,15 @@ public class Review {
 
     public void setId(Long id) {
         if (this.id == null) this.id = id;
+    }
+
+    public GetReviewsPagesResponse mapToGetReviewsPagesResponse() {
+        return new GetReviewsPagesResponse(
+                this.description,
+                this.createdAt,
+                this.reviewScore,
+                this.normReviewScore,
+                this.user.getUsername(),
+                this.user.getId());
     }
 }

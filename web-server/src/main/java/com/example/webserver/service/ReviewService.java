@@ -4,11 +4,14 @@ import com.example.webserver.dto.init.RestaurantList;
 import com.example.webserver.dto.init.SaveAllRequest;
 import com.example.webserver.dto.init.SaveAllRequest.ReviewUsernameDto;
 import com.example.webserver.dto.init.SaveAllRequest.ReviewUsernameDto.ReviewDto;
+import com.example.webserver.dto.review.GetReviewsPagesResponse;
 import com.example.webserver.entity.Place;
 import com.example.webserver.entity.Review;
 import com.example.webserver.entity.User;
 import com.example.webserver.repository.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -202,5 +205,9 @@ public class ReviewService {
     private Place savePlace(String placeName) {
         Place place = new Place(placeName);
         return placeRepository.save(place);
+    }
+
+    public Page<GetReviewsPagesResponse> getReviews(Long id, Pageable pageable) {
+        return reviewRepository.findAllByPlaceId(id, pageable).map(Review::mapToGetReviewsPagesResponse);
     }
 }

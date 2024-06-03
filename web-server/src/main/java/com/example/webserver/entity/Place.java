@@ -1,6 +1,7 @@
 package com.example.webserver.entity;
 
-import com.example.webserver.dto.GetPlacePagesResponse;
+import com.example.webserver.dto.place.GetPlacePagesResponse;
+import com.example.webserver.dto.place.GetPlaceResponse;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -55,12 +56,22 @@ public class Place {
         if (this.id == null) this.id = id;
     }
 
-    public GetPlacePagesResponse mapToDto() {
-        return new GetPlacePagesResponse(this.placeName,
+    public GetPlacePagesResponse mapToGetPlacePagesResponse() {
+        return new GetPlacePagesResponse(this.id,
+                this.placeName,
                 this.averageScore,
                 this.averageNormScore,
                 this.address,
                 String.valueOf(this.reviewNumber),
+                this.tags);
+    }
+
+    public GetPlaceResponse mapToGetPlaceResponse() {
+        return new GetPlaceResponse(this.placeName,
+                this.reviewNumber,
+                this.averageScore,
+                this.averageNormScore,
+                this.address,
                 this.tags);
     }
 }

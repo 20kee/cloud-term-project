@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String username;
+    private String username;
 
-    double averageScore;
+    private double averageScore;
 
     public User(String username, double averageScore) {
         this.username = username;

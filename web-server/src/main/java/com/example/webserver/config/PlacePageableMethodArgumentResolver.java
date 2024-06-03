@@ -22,7 +22,7 @@ public class PlacePageableMethodArgumentResolver implements HandlerMethodArgumen
        String page = webRequest.getParameter("page");
        String size = webRequest.getParameter("size");
 
-       if (sort == null || sort.isEmpty()) sort = "placeName";;
+       if (sort == null || sort.isEmpty()) sort = "placeName";
        if (page == null || page.isEmpty()) page = "0";
        if (size == null || size.isEmpty()) size = "10";
 

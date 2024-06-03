@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{place.placeName}} - Reviews</title>
+    <link rel="stylesheet" href="/css/placeWithReviews.css">
+</head>
+<body>
+<h1>{{place.placeName}}</h1>
+<p><strong>주소:</strong> {{place.address}}</p>
+<p><strong>평균 평점:</strong> {{place.averageScore}}</p>
+<p><strong>추천 지수:</strong> {{place.averageNormScore}}</p>
+<p><strong>리뷰 수:</strong> {{place.reviewNumber}}</p>
+<p><strong>태그:</strong> {{place.tags}}</p>
+
+<h2>베스트 리뷰</h2>
+{{#placeReviews.content}}
+    <div class="review">
+        <p>{{username}}</p>
+        <p><strong>작성일:</strong> {{createdAt}}</p>
+        <p><strong>리뷰 평점:</strong> {{reviewScore}}</p>
+        <p><strong>추천 지수:</strong> {{normReviewScore}}</p>
+        <p><strong>리뷰:</strong> {{description}}</p>
+    </div>
+    <hr/>
+{{/placeReviews.content}}
+
+<div class="pagination">
+    {{#placeReviews.hasPrevious}}
+        <a href="?page={{previous}}">&laquo; Previous</a>
+    {{/placeReviews.hasPrevious}}
+
+    Page {{current}} of {{placeReviews.totalPages}}
+
+    {{#placeReviews.hasNext}}
+        <a href="?page={{next}}">Next &raquo;</a>
+    {{/placeReviews.hasNext}}
+</div>
+</body>
+</html>
