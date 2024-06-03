@@ -21,7 +21,7 @@ public class UserController {
     private final ReviewService reviewService;
 
     @GetMapping("/user/{id}")
-    public String getUser(Model model, @PathVariable Long id, @PageableDefault(size = 10) Pageable pageable) {
+    public String getUser(Model model, @PathVariable("id") Long id, @PageableDefault(size = 10) Pageable pageable) {
         GetUserResponse userResponse = userService.getUser(id);
         Page<GetUserReviewsPagesResponse> reviewsResponse = reviewService.getReviewsByUserId(id, pageable);
 

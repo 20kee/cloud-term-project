@@ -38,7 +38,7 @@ public class PlaceController {
     }
 
     @GetMapping("/place/{id}")
-    public String getPlace(Model model, @PathVariable Long id, @ReviewPageable PageableWrapper pageableWrapper) {
+    public String getPlace(Model model, @PathVariable("id") Long id, @ReviewPageable PageableWrapper pageableWrapper) {
         GetPlaceResponse placeResponse = placeService.getPlace(id);
         Page<GetReviewsPagesResponse> reviewResponse = reviewService.getReviewsByPlaceId(id, pageableWrapper.pageable());
 
