@@ -1,7 +1,6 @@
 package com.example.webserver.entity;
 
 import com.example.webserver.dto.GetPlacePagesResponse;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -21,7 +20,7 @@ public class Place {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String placeName;
 
     private long reviewNumber;
 
@@ -37,16 +36,13 @@ public class Place {
     @CollectionTable(name = "place_tag", joinColumns = @JoinColumn(name = "place_id"))
     private List<String> tags = new ArrayList<>();
 
-    public Place(String name, long reviewNumber, double averageScore, double averageNormScore) {
-        this.name = name;
-        this.reviewNumber = reviewNumber;
-        this.averageScore = averageScore;
-        this.averageNormScore = averageNormScore;
+    public Place(String placeName) {
+        this.placeName = placeName;
     }
 
     @Builder
-    public Place(String name, String tags, long reviewNumber, double averageScore, double averageNormScore, boolean isNearByPNU, String address1, String address2) {
-        this.name = name;
+    public Place(String placeName, String tags, long reviewNumber, double averageScore, double averageNormScore, boolean isNearByPNU, String address1, String address2) {
+        this.placeName = placeName;
         this.tags = Arrays.stream(tags.split(",")).toList();
         this.reviewNumber = reviewNumber;
         this.averageScore = averageScore;
@@ -60,7 +56,7 @@ public class Place {
     }
 
     public GetPlacePagesResponse mapToDto() {
-        return new GetPlacePagesResponse(this.name,
+        return new GetPlacePagesResponse(this.placeName,
                 this.averageScore,
                 this.averageNormScore,
                 this.address,

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface PlaceRepository extends JpaRepository<Place, Long>, PagingAndSortingRepository<Place, Long> {
-    Place findByName(String name);
+    Place findByPlaceName(String name);
 
     @Query("SELECT DISTINCT p FROM Place p LEFT JOIN FETCH p.tags WHERE p.isNearByPNU = true")
     Page<Place> findPlacesWhereNearByPNU(Pageable pageable);

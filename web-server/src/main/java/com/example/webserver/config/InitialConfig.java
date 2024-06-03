@@ -10,7 +10,7 @@ public class InitialConfig {
     @Bean
     CommandLineRunner localServerStart(ReviewController reviewController) {
         return args -> {
-            reviewController.saveAll();
+            //reviewController.saveAll();
         };
     }
 }

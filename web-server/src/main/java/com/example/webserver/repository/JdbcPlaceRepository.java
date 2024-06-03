@@ -1,7 +1,6 @@
 package com.example.webserver.repository;
 
 import com.example.webserver.entity.Place;
-import com.example.webserver.entity.Review;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -24,7 +23,7 @@ public class JdbcPlaceRepository {
                         Place place = places.get(i);
                         int parameterIndex = 1;
                         //set name
-                        ps.setString(parameterIndex, place.getName());
+                        ps.setString(parameterIndex, place.getPlaceName());
                         parameterIndex = parameterIndex + 1;
                         //set average_score
                         ps.setDouble(parameterIndex, place.getAverageScore());

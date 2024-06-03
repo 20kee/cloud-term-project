@@ -17,6 +17,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
@@ -64,7 +65,7 @@ public class ReviewService {
                 ));
         Map<String, Place> findPlaceByPlaceName = places.stream()
                 .collect(Collectors.toMap(
-                        Place::getName,
+                        Place::getPlaceName,
                         place -> place,
                         (existingValue, newValue) -> newValue
                 ));
@@ -89,10 +90,37 @@ public class ReviewService {
     }
 
     private List<Place> bulkSavePlace(List<ReviewUsernameDto> reviewUsernames, Map<String, RestaurantList.RestaurantInfo> maps) {
-        List<Place> places = reviewUsernames.stream()
+        //식당들의 중복된 이름 제거하고 얻기
+        Set<String> placesName = reviewUsernames.stream()
                 .flatMap(dto -> dto.reviewList().stream())
-                .collect(Collectors.groupingBy(ReviewDto::restaurantName))
-                .entrySet().stream()
+                .map(ReviewDto::restaurantName).collect(Collectors.toSet());
+
+        System.out.println(placesName.size());
+        List<Place> returns = new ArrayList<>();
+
+        for (String place : placesName) {
+            if (maps.containsKey(place)) {
+                RestaurantList.RestaurantInfo info = maps.get(place);
+                returns.add(Place.builder()
+                        .isNearByPNU(true)
+                        .tags(info.tags())
+                                .reviewNumber(Long.parseLong(info.reviewCount().replace(",","")))
+                                .averageScore(Double.parseDouble(info.averageScore()))
+                        .averageNormScore(calculateAverageRating(reviewUsernames.stream()
+                                .flatMap(reviewUsernameDto -> reviewUsernameDto.reviewList().stream())
+                                .filter(reviewDto -> reviewDto.restaurantName().equals(place))
+                                .toList(), ReviewDto::normalizedScore))
+                        .placeName(place)
+                        .address1(info.address1())
+                        .address2(info.address2())
+                        .build());
+            }
+            else {
+                returns.add(new Place(place));
+            }
+        }
+
+                /*
                 //.filter(entry -> entry.getValue().size() >= 10) //리뷰가 10개 이상인 식당만
                 .map(entry -> {
                     boolean isNearByPNU = maps.containsKey(entry.getKey());
@@ -112,9 +140,15 @@ public class ReviewService {
                             calculateAverageRating(entry.getValue(), ReviewDto::normalizedScore));
                         }
                 )
+                .collect(Collectors.toMap(
+                        Place::getName,  // 중복을 제거할 기준인 Place의 이름
+                        Function.identity(),  // Place 객체 자체를 값으로 사용
+                        (existing, replacement) -> existing // 중복 발생 시 기존 값을 유지
+                ))
                 .toList();
-        placeRepository.saveAll(places);
-        return places;
+                 */
+        placeRepository.saveAll(returns);
+        return returns;
     }
 
     private List<User> bulkSaveUser(List<ReviewUsernameDto> reviewUsernames) {
@@ -153,7 +187,7 @@ public class ReviewService {
     private void saveAllReviews(User user, List<ReviewUsernameDto.ReviewDto> reviews) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
         for (ReviewUsernameDto.ReviewDto review : reviews) {
-            Place place = placeRepository.findByName(review.restaurantName());
+            Place place = placeRepository.findByPlaceName(review.restaurantName());
             if (place == null) place = savePlace(review.restaurantName());
 
            reviewRepository.save(Review.builder()
@@ -166,7 +200,7 @@ public class ReviewService {
     }
 
     private Place savePlace(String placeName) {
-        Place place = new Place(placeName, 0, 0.0, 0.0);
+        Place place = new Place(placeName);
         return placeRepository.save(place);
     }
 }

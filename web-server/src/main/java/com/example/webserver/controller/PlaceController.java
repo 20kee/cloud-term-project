@@ -24,6 +24,7 @@ public class PlaceController {
                 places.hasPrevious() ? places.previousPageable().getPageNumber() : 0);
         model.addAttribute("next",
                 places.hasNext() ? places.nextPageable().getPageNumber() : places.getPageable().getPageNumber());
+        model.addAttribute("current", places.getPageable().getPageNumber() + 1);
         return "placeList";
     }
 }
