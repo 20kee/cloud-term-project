@@ -1,6 +1,7 @@
 package com.example.webserver.entity;
 
 import com.example.webserver.dto.review.GetReviewsPagesResponse;
+import com.example.webserver.dto.review.GetUserReviewsPagesResponse;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -56,5 +57,15 @@ public class Review {
                 this.normReviewScore,
                 this.user.getUsername(),
                 this.user.getId());
+    }
+
+    public GetUserReviewsPagesResponse mapToGetUserReviewsPagesResponse() {
+        return new GetUserReviewsPagesResponse(
+                this.place.getPlaceName(),
+                this.reviewScore,
+                this.normReviewScore,
+                this.createdAt,
+                this.description
+        );
     }
 }

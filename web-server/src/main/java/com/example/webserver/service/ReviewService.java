@@ -5,6 +5,7 @@ import com.example.webserver.dto.init.SaveAllRequest;
 import com.example.webserver.dto.init.SaveAllRequest.ReviewUsernameDto;
 import com.example.webserver.dto.init.SaveAllRequest.ReviewUsernameDto.ReviewDto;
 import com.example.webserver.dto.review.GetReviewsPagesResponse;
+import com.example.webserver.dto.review.GetUserReviewsPagesResponse;
 import com.example.webserver.entity.Place;
 import com.example.webserver.entity.Review;
 import com.example.webserver.entity.User;
@@ -207,7 +208,11 @@ public class ReviewService {
         return placeRepository.save(place);
     }
 
-    public Page<GetReviewsPagesResponse> getReviews(Long id, Pageable pageable) {
+    public Page<GetReviewsPagesResponse> getReviewsByPlaceId(Long id, Pageable pageable) {
         return reviewRepository.findAllByPlaceId(id, pageable).map(Review::mapToGetReviewsPagesResponse);
+    }
+
+    public Page<GetUserReviewsPagesResponse> getReviewsByUserId(Long id, Pageable pageable) {
+        return reviewRepository.findAllByUserId(id, pageable).map(Review::mapToGetUserReviewsPagesResponse);
     }
 }

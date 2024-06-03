@@ -1,5 +1,6 @@
 package com.example.webserver.entity;
 
+import com.example.webserver.dto.user.GetUserResponse;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -25,5 +26,9 @@ public class User {
 
     public void setId(Long id) {
         if (this.id == null) this.id = id;
+    }
+
+    public GetUserResponse mapGetUserResponse() {
+        return new GetUserResponse(username, averageScore);
     }
 }
