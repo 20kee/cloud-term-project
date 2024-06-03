@@ -6,7 +6,18 @@
     <title>Place List</title>
 </head>
 <body>
-<h1>Place List</h1>
+<h1>부산대 근처 맛집 목록</h1>
+
+<!-- Sorting Dropdown -->
+<div class="sort-container">
+    <label for="sort">정렬:</label>
+    <select id="sort" name="sort" onchange="sortPlaces()">
+        <option value="averageScore">평균 평점</option>
+        <option value="averageNormScore">추천 지수</option>
+        <option value="placeName">이름</option>
+    </select>
+</div>
+
 <link rel="stylesheet" href="/css/placeList.css">
 <table>
     <thead>
@@ -37,13 +48,31 @@
     <span>Page {{current}} of {{placePage.totalPages}}</span>
     <div>
         {{#placePage.hasPrevious}}
-            <a href="/places?page={{previous}}&size={{placePage.size}}">Previous</a>
+            <a href="/places?page={{previous}}&size={{placePage.size}}&sort={{currentSort}}">Previous</a>
         {{/placePage.hasPrevious}}
 
         {{#placePage.hasNext}}
-            <a href="/places?page={{next}}&size={{placePage.size}}">Next</a>
+            <a href="/places?page={{next}}&size={{placePage.size}}&sort={{currentSort}}">Next</a>
         {{/placePage.hasNext}}
     </div>
 </div>
+
+<script>
+    function sortPlaces() {
+        const sort = document.getElementById('sort').value;
+        const params = new URLSearchParams(window.location.search);
+        params.set('sort', sort);
+        window.location.search = params.toString();
+    }
+
+    // Set the selected sort option based on the URL parameter
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const sort = params.get('sort');
+        if (sort) {
+            document.getElementById('sort').value = sort;
+        }
+    }
+</script>
 </body>
 </html>
