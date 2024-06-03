@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{place.placeName}} - Reviews</title>
+    <link rel="stylesheet" href="/css/placeWithReviews.css">
+</head>
+<body>
+<h1>{{place.placeName}}</h1>
+<p><strong>주소:</strong> {{place.address}}</p>
+<p><strong>평균 평점:</strong> {{place.averageScore}}</p>
+<p><strong>추천 지수:</strong> {{place.averageNormScore}}</p>
+<p><strong>리뷰 수:</strong> {{place.reviewNumber}}</p>
+<p><strong>태그:</strong> {{place.tags}}</p>
+
+<h2>베스트 리뷰</h2>
+
+<div class="sort-container">
+    <label for="sort">정렬:</label>
+    <select id="sort" name="sort" onchange="sortPlaces()">
+        <option value="createdAt">작성일</option>
+        <option value="normReviewScore">추천 지수</option>
+        <option value="reviewScore">평점</option>
+    </select>
+</div>
+
+{{#placeReviews.content}}
+    <div class="review">
+        <p><strong><a href="/user/{{userId}}">{{username}}</a></strong></p>
+        <p><strong>작성일:</strong> {{createdAt}}</p>
+        <p><strong>리뷰 평점:</strong> {{reviewScore}}</p>
+        <p><strong>추천 지수:</strong> {{normReviewScore}}</p>
+        <p><strong>리뷰:</strong> {{description}}</p>
+    </div>
+    <hr/>
+{{/placeReviews.content}}
+
+<div class="pagination">
+    {{#placeReviews.hasPrevious}}
+        <a href="?page={{previous}}&sort={{currentSort}}">&laquo; Previous</a>
+    {{/placeReviews.hasPrevious}}
+
+    Page {{current}} of {{placeReviews.totalPages}}
+
+    {{#placeReviews.hasNext}}
+        <a href="?page={{next}}&sort={{currentSort}}">Next &raquo;</a>
+    {{/placeReviews.hasNext}}
+</div>
+
+<script>
+    function sortPlaces() {
+        const sort = document.getElementById('sort').value;
+        const params = new URLSearchParams(window.location.search);
+        params.set('sort', sort);
+        window.location.search = params.toString();
+    }
+
+    // Set the selected sort option based on the URL parameter
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const sort = params.get('sort');
+        if (sort) {
+            document.getElementById('sort').value = sort;
+        }
+    }
+</script>
+</body>
+</html>

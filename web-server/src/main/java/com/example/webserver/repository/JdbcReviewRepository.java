@@ -41,7 +41,7 @@ public class JdbcReviewRepository {
                         ps.setInt(parameterIndex, review.getReviewScore());
                         parameterIndex = parameterIndex + 1;
                         //set normReviewScore
-                        ps.setInt(parameterIndex, review.getNormReviewScore());
+                        ps.setDouble(parameterIndex, review.getNormReviewScore());
                         parameterIndex = parameterIndex + 1;
                     }
 

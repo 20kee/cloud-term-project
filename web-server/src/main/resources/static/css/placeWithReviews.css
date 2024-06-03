@@ -1,0 +1,79 @@
+/* placeWithReviews.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #004080;
+    text-align: left;
+}
+
+p {
+    line-height: 1.6;
+    text-align: left; /* 가게 설명을 왼쪽 정렬로 설정 */
+    width: 80%;
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+strong {
+    color: #004080;
+}
+
+.sort-container {
+    margin-bottom: 10px;
+}
+
+.review {
+    background-color: #f8fbff;
+    padding: 15px;
+    border: 1px solid #d0e8ff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* 모든 리뷰 박스의 너비를 동일하게 설정 */
+    height: 150px; /* 고정된 높이 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 내용이 상하로 균등하게 배치되도록 설정 */
+}
+
+.review p {
+    text-align: left; /* 리뷰 내의 모든 텍스트를 왼쪽 정렬 */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #d0e8ff;
+    margin: 20px 0;
+    width: 80%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.pagination span {
+    font-size: 14px;
+    color: #333;
+}
+
+.pagination a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}

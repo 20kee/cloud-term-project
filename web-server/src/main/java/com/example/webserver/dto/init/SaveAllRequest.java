@@ -1,0 +1,21 @@
+package com.example.webserver.dto.init;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public record SaveAllRequest(
+        List<ReviewUsernameDto> reviews
+) {
+        public record ReviewUsernameDto(
+                String username,
+                List<ReviewDto> reviewList
+        ) {
+            public record ReviewDto(
+                    String restaurantName,
+                    int reviewScore,
+                    double normalizedScore,
+                    String description,
+                    String createdAt
+            ) {}
+        }
+}

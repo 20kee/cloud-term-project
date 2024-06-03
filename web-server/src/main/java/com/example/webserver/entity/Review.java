@@ -1,6 +1,7 @@
 package com.example.webserver.entity;
 
-import com.example.webserver.dto.SaveAllRequest;
+import com.example.webserver.dto.review.GetReviewsPagesResponse;
+import com.example.webserver.dto.review.GetUserReviewsPagesResponse;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -8,7 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -17,15 +17,15 @@ import java.time.LocalDateTime;
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String description;
+    private String description;
 
-    LocalDate createdAt;
+    private LocalDate createdAt;
 
-    int reviewScore;
+    private int reviewScore;
 
-    int normReviewScore;
+    private double normReviewScore;
 
     @ManyToOne
     @JoinColumn(name = "place_id", nullable = false)
@@ -36,15 +36,36 @@ public class Review {
     User user;
 
     @Builder
-    public Review(String description, LocalDate createdAt, int reviewScore, Place place, User user) {
+    public Review(String description, LocalDate createdAt, int reviewScore, double normReviewScore, Place place, User user) {
         this.description = description;
         this.createdAt = createdAt;
         this.reviewScore = reviewScore;
+        this.normReviewScore = normReviewScore;
         this.place = place;
         this.user = user;
     }
 
     public void setId(Long id) {
         if (this.id == null) this.id = id;
+    }
+
+    public GetReviewsPagesResponse mapToGetReviewsPagesResponse() {
+        return new GetReviewsPagesResponse(
+                this.description,
+                this.createdAt,
+                this.reviewScore,
+                this.normReviewScore,
+                this.user.getUsername(),
+                this.user.getId());
+    }
+
+    public GetUserReviewsPagesResponse mapToGetUserReviewsPagesResponse() {
+        return new GetUserReviewsPagesResponse(
+                this.place.getPlaceName(),
+                this.reviewScore,
+                this.normReviewScore,
+                this.createdAt,
+                this.description
+        );
     }
 }

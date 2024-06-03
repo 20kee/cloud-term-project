@@ -1,0 +1,949 @@
+{
+    "restaurants": [
+        {
+            "name": "톤쇼우 부산대본점",
+            "restaurant_type": "돈까스,우동",
+            "averageScore": "4.1",
+            "normScore": "norm_score",
+            "reviewCount": "1,136",
+            "address1": "부산 금정구 금강로 247-10",
+            "address2": "장전동 419-21"
+        },
+        {
+            "name": "나오리쇼쿠 부산대점",
+            "restaurant_type": "일식집",
+            "averageScore": "4.3",
+            "normScore": "norm_score",
+            "reviewCount": "418",
+            "address1": "부산 금정구 금강로 271-14",
+            "address2": "장전동 409-14"
+        },
+        {
+            "name": "뉴숯불통닭 본점",
+            "restaurant_type": "치킨",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "162",
+            "address1": "부산 금정구 금강로335번길 55 1층",
+            "address2": "장전동 146-2"
+        },
+        {
+            "name": "스시심",
+            "restaurant_type": "초밥,롤",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "205",
+            "address1": "부산 금정구 금강로 279-1",
+            "address2": "장전동 419-7"
+        },
+        {
+            "name": "진국명가",
+            "restaurant_type": "국밥",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "5",
+            "address1": "부산 금정구 금강로 271 1,2층",
+            "address2": "장전동 419-11"
+        },
+        {
+            "name": "델라고 부산대점",
+            "restaurant_type": "이탈리안",
+            "averageScore": "4.3",
+            "normScore": "norm_score",
+            "reviewCount": "86",
+            "address1": "부산 금정구 금강로 253-1 2층",
+            "address2": "장전동 419-18"
+        },
+        {
+            "name": "코하루",
+            "restaurant_type": "일본식라면",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "330",
+            "address1": "부산 금정구 부산대학로38번길 16 1층",
+            "address2": "장전동 412-22"
+        },
+        {
+            "name": "수림식당",
+            "restaurant_type": "중식",
+            "averageScore": "4.0",
+            "normScore": "norm_score",
+            "reviewCount": "205",
+            "address1": "부산 금정구 금샘로 7",
+            "address2": "장전동 505-6"
+        },
+        {
+            "name": "모시모시",
+            "restaurant_type": "초밥,롤",
+            "averageScore": "",
+            "normScore": "norm_score",
+            "reviewCount": "70",
+            "address1": "부산 금정구 금강로 271-5 1층",
+            "address2": "장전동 401-5"
+        },
+        {
+            "name": "카페테제",
+            "restaurant_type": "카페",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "4",
+            "address1": "부산 금정구 금강로 248-7 2층",
+            "address2": "장전동 420-8"
+        },
+        {
+            "name": "개성상인",
+            "restaurant_type": "삼겹살",
+            "averageScore": "4.1",
+            "normScore": "norm_score",
+            "reviewCount": "87",
+            "address1": "부산 금정구 금강로 248-5 2층",
+            "address2": "장전동 420-28"
+        },
+        {
+            "name": "카츠안",
+            "restaurant_type": "돈까스,우동",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "56",
+            "address1": "부산 금정구 금정로 59-8 1층",
+            "address2": "장전동 421-13"
+        },
+        {
+            "name": "포맨티코",
+            "restaurant_type": "베트남음식",
+            "averageScore": "4.5",
+            "normScore": "norm_score",
+            "reviewCount": "88",
+            "address1": "부산 금정구 장전로12번길 16 1층",
+            "address2": "장전동 293-196"
+        },
+        {
+            "name": "소다미김밥",
+            "restaurant_type": "분식",
+            "averageScore": "4.3",
+            "normScore": "norm_score",
+            "reviewCount": "58",
+            "address1": "부산 금정구 금강로 271-4 1층",
+            "address2": "장전동 419-10"
+        },
+        {
+            "name": "김해원조뒷고기",
+            "restaurant_type": "육류,고기",
+            "averageScore": "4.0",
+            "normScore": "norm_score",
+            "reviewCount": "90",
+            "address1": "부산 금정구 금강로 239 1층",
+            "address2": "장전동 424-9"
+        },
+        {
+            "name": "맛나감자탕 부산대점",
+            "restaurant_type": "감자탕",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "96",
+            "address1": "부산 금정구 장전온천천로 73 재영빌딩 2층 201호",
+            "address2": "장전동 413-20"
+        },
+        {
+            "name": "우마이도 부산대점",
+            "restaurant_type": "일본식라면",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "81",
+            "address1": "부산 금정구 금강로 247-5 상지빌딩 1층",
+            "address2": "장전동 424-2"
+        },
+        {
+            "name": "신육간",
+            "restaurant_type": "육류,고기",
+            "averageScore": "",
+            "normScore": "norm_score",
+            "reviewCount": "267",
+            "address1": "부산 금정구 금정로91번길 20",
+            "address2": "장전동 389-15"
+        },
+        {
+            "name": "대박횟집",
+            "restaurant_type": "회",
+            "averageScore": "4.6",
+            "normScore": "norm_score",
+            "reviewCount": "77",
+            "address1": "부산 금정구 금강로 276-8",
+            "address2": "장전동 418-30"
+        },
+        {
+            "name": "커피어웨이크 부산대점",
+            "restaurant_type": "커피전문점",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "10",
+            "address1": "부산 금정구 부산대학로63번길 46-4",
+            "address2": "장전동 425-2"
+        },
+        {
+            "name": "설봉돼지국밥",
+            "restaurant_type": "국밥",
+            "averageScore": "4.6",
+            "normScore": "norm_score",
+            "reviewCount": "62",
+            "address1": "부산 금정구 수림로49번길 6",
+            "address2": "장전동 203-5"
+        },
+        {
+            "name": "황금칼국수",
+            "restaurant_type": "칼국수",
+            "averageScore": "4.5",
+            "normScore": "norm_score",
+            "reviewCount": "67",
+            "address1": "부산 금정구 부산대학로38번길 35 송림아파트 101호",
+            "address2": "장전동 391-6"
+        },
+        {
+            "name": "부산대우쭈쭈",
+            "restaurant_type": "해물,생선",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "100",
+            "address1": "부산 금정구 부산대학로49번길 19 1층",
+            "address2": "장전동 421-17"
+        },
+        {
+            "name": "보노베리",
+            "restaurant_type": "디저트카페",
+            "averageScore": "4.1",
+            "normScore": "norm_score",
+            "reviewCount": "241",
+            "address1": "부산 금정구 장전온천천로 67-1",
+            "address2": "장전동 414-1"
+        },
+        {
+            "name": "원조밀면",
+            "restaurant_type": "국수",
+            "averageScore": "4.9",
+            "normScore": "norm_score",
+            "reviewCount": "26",
+            "address1": "부산 금정구 부산대학로64번길 112",
+            "address2": "장전동 233-6"
+        },
+        {
+            "name": "촨촨향양꼬치",
+            "restaurant_type": "양꼬치",
+            "averageScore": "4.9",
+            "normScore": "norm_score",
+            "reviewCount": "276",
+            "address1": "부산 금정구 부산대학로50번길 39 1층",
+            "address2": "장전동 389-11"
+        },
+        {
+            "name": "김해뒷고기 고가",
+            "restaurant_type": "육류,고기",
+            "averageScore": "3.6",
+            "normScore": "norm_score",
+            "reviewCount": "86",
+            "address1": "부산 금정구 금강로 276-9",
+            "address2": "장전동 418-25"
+        },
+        {
+            "name": "쿠카이야",
+            "restaurant_type": "돈까스,우동",
+            "averageScore": "3.2",
+            "normScore": "norm_score",
+            "reviewCount": "296",
+            "address1": "부산 금정구 부산대학로63번길 37",
+            "address2": "장전동 424-5"
+        },
+        {
+            "name": "칠성돌곱창",
+            "restaurant_type": "곱창,막창",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "140",
+            "address1": "부산 금정구 부산대학로49번길 49",
+            "address2": "장전동 422-7"
+        },
+        {
+            "name": "스타벅스 부산대정문점",
+            "restaurant_type": "커피전문점",
+            "averageScore": "3.1",
+            "normScore": "norm_score",
+            "reviewCount": "23",
+            "address1": "부산 금정구 부산대학로64번길 12",
+            "address2": "장전동 401-13"
+        },
+        {
+            "name": "노스커피 북문점",
+            "restaurant_type": "커피전문점",
+            "averageScore": "4.0",
+            "normScore": "norm_score",
+            "reviewCount": "5",
+            "address1": "부산 금정구 수림로85번길 56 1층",
+            "address2": "장전동 145-7"
+        },
+        {
+            "name": "홍보석 숯불구이",
+            "restaurant_type": "삼겹살",
+            "averageScore": "5.0",
+            "normScore": "norm_score",
+            "reviewCount": "12",
+            "address1": "부산 금정구 금강로 256-7",
+            "address2": "장전동 420-34"
+        },
+        {
+            "name": "이흥용과자점 부산대직영점",
+            "restaurant_type": "제과,베이커리",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "27",
+            "address1": "부산 금정구 부산대학로63번길 30",
+            "address2": "장전동 425-1"
+        },
+        {
+            "name": "836숯불바베큐치킨 부산대점",
+            "restaurant_type": "치킨",
+            "averageScore": "3.3",
+            "normScore": "norm_score",
+            "reviewCount": "23",
+            "address1": "부산 금정구 금정로91번길 22 1층",
+            "address2": "장전동 389-20"
+        },
+        {
+            "name": "마린파스타 부산대점",
+            "restaurant_type": "이탈리안",
+            "averageScore": "4.7",
+            "normScore": "norm_score",
+            "reviewCount": "57",
+            "address1": "부산 금정구 부산대학로63번길 47",
+            "address2": "장전동 424-21"
+        },
+        {
+            "name": "돈까스겸",
+            "restaurant_type": "돈까스,우동",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "37",
+            "address1": "부산 금정구 부산대학로63번길 21 1층",
+            "address2": "장전동 403-22"
+        },
+        {
+            "name": "진주비봉식당",
+            "restaurant_type": "국밥",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "38",
+            "address1": "부산 금정구 부산대학로49번길 13 1층",
+            "address2": "장전동 421-7"
+        },
+        {
+            "name": "미각반점",
+            "restaurant_type": "중국요리",
+            "averageScore": "3.7",
+            "normScore": "norm_score",
+            "reviewCount": "87",
+            "address1": "부산 금정구 장전로 38 1층",
+            "address2": "장전동 423-51"
+        },
+        {
+            "name": "호호닭집",
+            "restaurant_type": "치킨",
+            "averageScore": "4.9",
+            "normScore": "norm_score",
+            "reviewCount": "39",
+            "address1": "부산 금정구 금강로335번길 68",
+            "address2": "장전동 136-9"
+        },
+        {
+            "name": "토비코",
+            "restaurant_type": "퓨전한식",
+            "averageScore": "2.9",
+            "normScore": "norm_score",
+            "reviewCount": "229",
+            "address1": "부산 금정구 금정로 45",
+            "address2": "장전동 422-13"
+        },
+        {
+            "name": "논피니토",
+            "restaurant_type": "디저트카페",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "2,925",
+            "address1": "부산 금정구 금정로 94 1,2층",
+            "address2": "장전동 391-3"
+        },
+        {
+            "name": "칠칠켄터키 부산대본점",
+            "restaurant_type": "치킨",
+            "averageScore": "4.5",
+            "normScore": "norm_score",
+            "reviewCount": "47",
+            "address1": "부산 금정구 금강로 271-8",
+            "address2": "장전동 409-17"
+        },
+        {
+            "name": "곁집",
+            "restaurant_type": "한식",
+            "averageScore": "3.4",
+            "normScore": "norm_score",
+            "reviewCount": "57",
+            "address1": "부산 금정구 금강로 254 1층",
+            "address2": "장전동 420-43"
+        },
+        {
+            "name": "리틀프랑",
+            "restaurant_type": "이탈리안",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "23",
+            "address1": "부산 금정구 부산대학로 50",
+            "address2": "장전동 418-71"
+        },
+        {
+            "name": "마마도마 부산대점",
+            "restaurant_type": "초밥,롤",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "127",
+            "address1": "부산 금정구 금강로 248-5 1층",
+            "address2": "장전동 420-28"
+        },
+        {
+            "name": "칼집삼겹 부산대본점",
+            "restaurant_type": "삼겹살",
+            "averageScore": "4.3",
+            "normScore": "norm_score",
+            "reviewCount": "20",
+            "address1": "부산 금정구 금정로91번길 3 1층",
+            "address2": "장전동 417-2"
+        },
+        {
+            "name": "텐동코하루",
+            "restaurant_type": "일식집",
+            "averageScore": "2.8",
+            "normScore": "norm_score",
+            "reviewCount": "98",
+            "address1": "부산 금정구 부산대학로49번길 43",
+            "address2": "장전동 422-21"
+        },
+        {
+            "name": "블루그로토",
+            "restaurant_type": "카페",
+            "averageScore": "4.4",
+            "normScore": "norm_score",
+            "reviewCount": "157",
+            "address1": "부산 금정구 장전온천천로73번길 14 1층",
+            "address2": "장전동 412-45"
+        },
+        {
+            "name": "동경생돈까스",
+            "restaurant_type": "돈까스,우동",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "13",
+            "address1": "부산 금정구 금강로279번길 6 1층",
+            "address2": "장전동 388-12"
+        },
+        {
+            "name": "대길고추불고기 2호점",
+            "restaurant_type": "불고기,두루치기",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "31",
+            "address1": "부산 금정구 장전로 47",
+            "address2": "장전동 360-5"
+        },
+        {
+            "name": "부산대밀면",
+            "restaurant_type": "국수",
+            "averageScore": "4.0",
+            "normScore": "norm_score",
+            "reviewCount": "18",
+            "address1": "부산 금정구 부산대학로63번길 50 1층",
+            "address2": "장전동 425-13"
+        },
+        {
+            "name": "강다짐삼각김밥 부산대점",
+            "restaurant_type": "분식",
+            "averageScore": "4.6",
+            "normScore": "norm_score",
+            "reviewCount": "20",
+            "address1": "부산 금정구 부산대학로64번길 6",
+            "address2": "장전동 402-3"
+        },
+        {
+            "name": "자마미등갈비 부산대점",
+            "restaurant_type": "갈비",
+            "averageScore": "4.3",
+            "normScore": "norm_score",
+            "reviewCount": "170",
+            "address1": "부산 금정구 부산대학로49번길 22 2층",
+            "address2": "장전동 420-6"
+        },
+        {
+            "name": "통큰집 본점",
+            "restaurant_type": "갈비",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "39",
+            "address1": "부산 금정구 금정로60번길 7-3",
+            "address2": "장전동 312-36"
+        },
+        {
+            "name": "교토밥상",
+            "restaurant_type": "일식집",
+            "averageScore": "3.0",
+            "normScore": "norm_score",
+            "reviewCount": "43",
+            "address1": "부산 금정구 금강로 270 2층",
+            "address2": "장전동 418-13"
+        },
+        {
+            "name": "술화당",
+            "restaurant_type": "호프,요리주점",
+            "averageScore": "2.8",
+            "normScore": "norm_score",
+            "reviewCount": "25",
+            "address1": "부산 금정구 금정로 93 1층",
+            "address2": "장전동 390-16"
+        },
+        {
+            "name": "스시미도리",
+            "restaurant_type": "초밥,롤",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "11",
+            "address1": "부산 금정구 금정로91번길 16",
+            "address2": "장전동 389-14"
+        },
+        {
+            "name": "야마벤또",
+            "restaurant_type": "일식",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "68",
+            "address1": "부산 금정구 금강로 255-4 2층",
+            "address2": "장전동 419-24"
+        },
+        {
+            "name": "번아웃커피 부산대점",
+            "restaurant_type": "커피전문점",
+            "averageScore": "4.1",
+            "normScore": "norm_score",
+            "reviewCount": "16",
+            "address1": "부산 금정구 부산대학로64번길 43 1~2층",
+            "address2": "장전동 387-14"
+        },
+        {
+            "name": "탕화쿵푸마라탕 부산대점",
+            "restaurant_type": "중국요리",
+            "averageScore": "2.8",
+            "normScore": "norm_score",
+            "reviewCount": "7",
+            "address1": "부산 금정구 부산대학로63번길 21-4 1층",
+            "address2": "장전동 403-21"
+        },
+        {
+            "name": "맥도날드 부산대2점",
+            "restaurant_type": "패스트푸드",
+            "averageScore": "3.6",
+            "normScore": "norm_score",
+            "reviewCount": "23",
+            "address1": "부산 금정구 금정로60번길 24 해자빌딩 1층",
+            "address2": "장전동 302-9"
+        },
+        {
+            "name": "짹짹커피 부산대점",
+            "restaurant_type": "카페",
+            "averageScore": "4.5",
+            "normScore": "norm_score",
+            "reviewCount": "93",
+            "address1": "부산 금정구 금강로321번길 105 1층",
+            "address2": "장전동 25-16"
+        },
+        {
+            "name": "아웃닭 부산대점",
+            "restaurant_type": "치킨",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "21",
+            "address1": "부산 금정구 부산대학로50번길 28",
+            "address2": "장전동 417-29"
+        },
+        {
+            "name": "터줏집돼지국밥",
+            "restaurant_type": "국밥",
+            "averageScore": "4.1",
+            "normScore": "norm_score",
+            "reviewCount": "28",
+            "address1": "부산 금정구 부산대학로49번길 13",
+            "address2": "장전동 421-7"
+        },
+        {
+            "name": "고기는모름지기X놀래쓰 부산대점",
+            "restaurant_type": "",
+            "averageScore": "4.7",
+            "normScore": "norm_score",
+            "reviewCount": "137",
+            "address1": "부산 금정구 금정로91번길 2 1층",
+            "address2": "장전동 390-15"
+        },
+        {
+            "name": "늘아침",
+            "restaurant_type": "오리",
+            "averageScore": "5.0",
+            "normScore": "norm_score",
+            "reviewCount": "11",
+            "address1": "부산 금정구 부산대학로64번길 155",
+            "address2": "장전동 157-18"
+        },
+        {
+            "name": "만사성",
+            "restaurant_type": "중국요리",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "11",
+            "address1": "부산 금정구 금강로321번길 51",
+            "address2": "장전동 226-7"
+        },
+        {
+            "name": "인자한키친",
+            "restaurant_type": "일식",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "98",
+            "address1": "부산 금정구 부산대학로64번길 128",
+            "address2": "장전동 221-10"
+        },
+        {
+            "name": "고메밀면 부산대점",
+            "restaurant_type": "국수",
+            "averageScore": "2.5",
+            "normScore": "norm_score",
+            "reviewCount": "68",
+            "address1": "부산 금정구 부산대학로 49 1, 2층",
+            "address2": "장전동 420-1"
+        },
+        {
+            "name": "자스민커피 문창점",
+            "restaurant_type": "카페",
+            "averageScore": "5.0",
+            "normScore": "norm_score",
+            "reviewCount": "0",
+            "address1": "부산 금정구 금강로279번길 5",
+            "address2": "장전동 419-5"
+        },
+        {
+            "name": "물고기 부산대점",
+            "restaurant_type": "일본식주점",
+            "averageScore": "3.1",
+            "normScore": "norm_score",
+            "reviewCount": "46",
+            "address1": "부산 금정구 금강로 271-4",
+            "address2": "장전동 419-10"
+        },
+        {
+            "name": "꾸아 부산대점",
+            "restaurant_type": "베트남음식",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "1,100",
+            "address1": "부산 금정구 금강로 247-6",
+            "address2": "장전동 419-28"
+        },
+        {
+            "name": "하얼빈",
+            "restaurant_type": "양꼬치",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "88",
+            "address1": "부산 금정구 금정로 61-1 2층",
+            "address2": "장전동 421-9"
+        },
+        {
+            "name": "마산분식",
+            "restaurant_type": "분식",
+            "averageScore": "4.6",
+            "normScore": "norm_score",
+            "reviewCount": "14",
+            "address1": "부산 금정구 수림로85번길 47 1층",
+            "address2": "장전동 146-1"
+        },
+        {
+            "name": "모구모구베이커리 장전",
+            "restaurant_type": "제과,베이커리",
+            "averageScore": "4.0",
+            "normScore": "norm_score",
+            "reviewCount": "44",
+            "address1": "부산 금정구 부산대학로64번길 130 1층",
+            "address2": "장전동 221-9"
+        },
+        {
+            "name": "겐쇼심야라멘",
+            "restaurant_type": "일본식라면",
+            "averageScore": "2.9",
+            "normScore": "norm_score",
+            "reviewCount": "22",
+            "address1": "부산 금정구 금정로68번길 7",
+            "address2": "장전동 415-3"
+        },
+        {
+            "name": "해쉬",
+            "restaurant_type": "양식",
+            "averageScore": "4.1",
+            "normScore": "norm_score",
+            "reviewCount": "134",
+            "address1": "부산 금정구 금강로 248-3 1층",
+            "address2": "장전동 420-9"
+        },
+        {
+            "name": "부들파이터 부산대점",
+            "restaurant_type": "동남아음식",
+            "averageScore": "3.8",
+            "normScore": "norm_score",
+            "reviewCount": "182",
+            "address1": "부산 금정구 금강로 255-4 1층",
+            "address2": "장전동 419-24"
+        },
+        {
+            "name": "정성식당",
+            "restaurant_type": "한식",
+            "averageScore": "2.7",
+            "normScore": "norm_score",
+            "reviewCount": "39",
+            "address1": "부산 금정구 금강로 249",
+            "address2": "장전동 419-27"
+        },
+        {
+            "name": "땡삼이닭도리",
+            "restaurant_type": "닭요리",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "68",
+            "address1": "부산 금정구 금정로91번길 16 1층",
+            "address2": "장전동 389-14"
+        },
+        {
+            "name": "리멘시타",
+            "restaurant_type": "이탈리안",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "109",
+            "address1": "부산 금정구 금강로 254 2층",
+            "address2": "장전동 420-43"
+        },
+        {
+            "name": "카페비윤",
+            "restaurant_type": "카페",
+            "averageScore": "2.1",
+            "normScore": "norm_score",
+            "reviewCount": "54",
+            "address1": "부산 금정구 금정로52번길 27",
+            "address2": "장전동 293-61"
+        },
+        {
+            "name": "코스피어",
+            "restaurant_type": "커피전문점",
+            "averageScore": "4.5",
+            "normScore": "norm_score",
+            "reviewCount": "111",
+            "address1": "부산 금정구 장전온천천로79번길 4 1층",
+            "address2": "장전동 394-7"
+        },
+        {
+            "name": "코코브라운 부산대본점",
+            "restaurant_type": "이탈리안",
+            "averageScore": "4.9",
+            "normScore": "norm_score",
+            "reviewCount": "4",
+            "address1": "부산 금정구 금강로 250 2층",
+            "address2": "장전동 420-30"
+        },
+        {
+            "name": "오공복이 부산대점",
+            "restaurant_type": "퓨전요리",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "35",
+            "address1": "부산 금정구 부산대학로49번길 33",
+            "address2": "장전동 422-41"
+        },
+        {
+            "name": "그집짬뽕0927 부산대본점",
+            "restaurant_type": "중국요리",
+            "averageScore": "4.6",
+            "normScore": "norm_score",
+            "reviewCount": "361",
+            "address1": "부산 금정구 부산대학로 53-1 1층",
+            "address2": "장전동 420-23"
+        },
+        {
+            "name": "토흐",
+            "restaurant_type": "돈까스,우동",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "20",
+            "address1": "부산 금정구 금강로 295-1 1층",
+            "address2": "장전동 385-6"
+        },
+        {
+            "name": "더기베이글",
+            "restaurant_type": "제과,베이커리",
+            "averageScore": "3.5",
+            "normScore": "norm_score",
+            "reviewCount": "123",
+            "address1": "부산 금정구 부산대학로64번길 14 1층",
+            "address2": "장전동 401-11"
+        },
+        {
+            "name": "관계",
+            "restaurant_type": "닭요리",
+            "averageScore": "5.0",
+            "normScore": "norm_score",
+            "reviewCount": "1,202",
+            "address1": "부산 금정구 부산대학로50번길 12",
+            "address2": "장전동 417-33"
+        },
+        {
+            "name": "부산대퇴근길",
+            "restaurant_type": "육류,고기",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "45",
+            "address1": "부산 금정구 장전로12번길 65 2층",
+            "address2": "장전동 414-14"
+        },
+        {
+            "name": "전람회의그림",
+            "restaurant_type": "커피전문점",
+            "averageScore": "4.8",
+            "normScore": "norm_score",
+            "reviewCount": "6",
+            "address1": "부산 금정구 금강로 280",
+            "address2": "장전동 418-1"
+        },
+        {
+            "name": "도야지면옥 본점",
+            "restaurant_type": "국수",
+            "averageScore": "4.3",
+            "normScore": "norm_score",
+            "reviewCount": "225",
+            "address1": "부산 금정구 장전온천천로 39 1층",
+            "address2": "장전동 643-289"
+        },
+        {
+            "name": "뭄바이",
+            "restaurant_type": "인도음식",
+            "averageScore": "3.9",
+            "normScore": "norm_score",
+            "reviewCount": "16",
+            "address1": "부산 금정구 금강로 271-6 2층",
+            "address2": "장전동 409-15"
+        },
+        {
+            "name": "친구집부대찌개",
+            "restaurant_type": "찌개,전골",
+            "averageScore": "5.0",
+            "normScore": "norm_score",
+            "reviewCount": "12",
+            "address1": "부산 금정구 금강로 277 1층",
+            "address2": "장전동 419-9"
+        },
+        {
+            "name": "할리스 부산금강식물원점",
+            "restaurant_type": "커피전문점",
+            "averageScore": "2.8",
+            "normScore": "norm_score",
+            "reviewCount": "20",
+            "address1": "부산 금정구 금샘로 22",
+            "address2": "장전동 521-82"
+        },
+        {
+            "name": "황소야 부산대점",
+            "restaurant_type": "한정식",
+            "averageScore": "5.0",
+            "normScore": "norm_score",
+            "reviewCount": "35",
+            "address1": "부산 금정구 부산대학로49번길 32 1층",
+            "address2": "장전동 423-27"
+        },
+        {
+            "name": "스타벅스 부산대역점",
+            "restaurant_type": "커피전문점",
+            "averageScore": "3.6",
+            "normScore": "norm_score",
+            "reviewCount": "30",
+            "address1": "부산 금정구 장전로12번길 64",
+            "address2": "장전동 414-39"
+        },
+        {
+            "name": "전통쑥밀면&족발&국밥",
+            "restaurant_type": "국수",
+            "averageScore": "3.7",
+            "normScore": "norm_score",
+            "reviewCount": "271",
+            "address1": "부산 금정구 부산대학로 38 1층",
+            "address2": "장전동 413-6"
+        },
+        {
+            "name": "리디앤폴",
+            "restaurant_type": "카페",
+            "averageScore": "4.2",
+            "normScore": "norm_score",
+            "reviewCount": "46",
+            "address1": "부산 금정구 금샘로 219",
+            "address2": "장전동 90-10"
+        },
+        {
+            "name": "컬러드",
+            "restaurant_type": "양식",
+            "averageScore": "5.0",
+            "normScore": "norm_score",
+            "reviewCount": "110",
+            "address1": "부산 금정구 부산대학로63번길 39 1층",
+            "address2": "장전동 424-28"
+        },
+        {
+            "name": "모어샌드위치 부산대점",
+            "restaurant_type": "샌드위치",
+            "averageScore": "3.0",
+            "normScore": "norm_score",
+            "reviewCount": "227",
+            "address1": "부산 금정구 금강로 255-6 1층",
+            "address2": "장전동 400-29"
+        },
+        {
+            "name": "야마즈미우동",
+            "restaurant_type": "돈까스,우동",
+            "averageScore": "4.5",
+            "normScore": "norm_score",
+            "reviewCount": "43",
+            "address1": "부산 금정구 금강로 285-3 1층",
+            "address2": "장전동 388-43"
+        },
+        {
+            "name": "샤브앤나베",
+            "restaurant_type": "샤브샤브",
+            "averageScore": "4.9",
+            "normScore": "norm_score",
+            "reviewCount": "27",
+            "address1": "부산 금정구 수림로61번길 34-1 1층",
+            "address2": "장전동 194-1"
+        },
+        {
+            "name": "엘부리또",
+            "restaurant_type": "멕시칸,브라질",
+            "averageScore": "4.5",
+            "normScore": "norm_score",
+            "reviewCount": "6",
+            "address1": "부산 금정구 금강로279번길 30-7 1층",
+            "address2": "장전동 40-10"
+        },
+        {
+            "name": "심취",
+            "restaurant_type": "호프,요리주점",
+            "averageScore": "4.9",
+            "normScore": "norm_score",
+            "reviewCount": "58",
+            "address1": "부산 금정구 부산대학로50번길 44 1층",
+            "address2": "장전동 390-9"
+        }
+    ]
+}

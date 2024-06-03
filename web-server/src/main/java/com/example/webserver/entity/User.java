@@ -1,5 +1,6 @@
 package com.example.webserver.entity;
 
+import com.example.webserver.dto.user.GetUserResponse;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -12,11 +13,11 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String username;
+    private String username;
 
-    double averageScore;
+    private double averageScore;
 
     public User(String username, double averageScore) {
         this.username = username;
@@ -25,5 +26,9 @@ public class User {
 
     public void setId(Long id) {
         if (this.id == null) this.id = id;
+    }
+
+    public GetUserResponse mapGetUserResponse() {
+        return new GetUserResponse(username, averageScore);
     }
 }

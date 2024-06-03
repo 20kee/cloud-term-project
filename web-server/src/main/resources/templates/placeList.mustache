@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place List</title>
+</head>
+<body>
+<h1>부산대 근처 맛집 목록</h1>
+
+<!-- Sorting Dropdown -->
+<div class="sort-container">
+    <label for="sort">정렬:</label>
+    <select id="sort" name="sort" onchange="sortPlaces()">
+        <option value="averageScore">평균 평점</option>
+        <option value="averageNormScore">추천 지수</option>
+        <option value="placeName">이름</option>
+    </select>
+</div>
+
+<link rel="stylesheet" href="/css/placeList.css">
+<table>
+    <thead>
+    <tr>
+        <th>장소</th>
+        <th>평균 평점</th>
+        <th>추천 지수</th>
+        <th>리뷰 수</th>
+        <th>태그</th>
+        <th>주소</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#placePage.content}}
+        <tr>
+            <td><a href="/place/{{id}}">{{name}}</a></td>
+            <td>{{averageScore}}</td>
+            <td>{{normScore}}</td>
+            <td>{{reviewNumber}}</td>
+            <td>{{tags}}</td>
+            <td>{{address}}</td>
+        </tr>
+    {{/placePage.content}}
+    </tbody>
+</table>
+
+<div class = "pagination">
+    <span>Page {{current}} of {{placePage.totalPages}}</span>
+    <div>
+        {{#placePage.hasPrevious}}
+            <a href="/places?page={{previous}}&size={{placePage.size}}&sort={{currentSort}}">Previous</a>
+        {{/placePage.hasPrevious}}
+
+        {{#placePage.hasNext}}
+            <a href="/places?page={{next}}&size={{placePage.size}}&sort={{currentSort}}">Next</a>
+        {{/placePage.hasNext}}
+    </div>
+</div>
+
+<script>
+    function sortPlaces() {
+        const sort = document.getElementById('sort').value;
+        const params = new URLSearchParams(window.location.search);
+        params.set('sort', sort);
+        window.location.search = params.toString();
+    }
+
+    // Set the selected sort option based on the URL parameter
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const sort = params.get('sort');
+        if (sort) {
+            document.getElementById('sort').value = sort;
+        }
+    }
+</script>
+</body>
+</html>

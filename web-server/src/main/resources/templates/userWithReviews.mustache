@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{user.username}} - Profile</title>
+    <link rel="stylesheet" href="/css/userWithReviews.css">
+</head>
+<body>
+<h1>{{user.username}}의 프로필</h1>
+<p><strong>평균 리뷰 점수:</strong> {{user.averageReviewScore}}</p>
+
+<h2>작성한 리뷰</h2>
+{{#userReviews.content}}
+    <div class="review">
+        <p><strong>{{placeName}}</strong></p>
+        <p><strong>작성일:</strong> {{createdAt}}</p>
+        <p><strong>리뷰 평점:</strong> {{reviewScore}}</p>
+        <p><strong>추천 지수:</strong> {{normReviewScore}}</p>
+        <p><strong>리뷰:</strong> {{description}}</p>
+    </div>
+    <hr/>
+{{/userReviews.content}}
+
+<div class="pagination">
+    {{#userReviews.hasPrevious}}
+        <a href="?page={{previous}}">&laquo; Previous</a>
+    {{/userReviews.hasPrevious}}
+
+    Page {{current}} of {{userReviews.totalPages}}
+
+    {{#userReviews.hasNext}}
+        <a href="?page={{next}}">Next &raquo;</a>
+    {{/userReviews.hasNext}}
+</div>
+</body>
+</html>
