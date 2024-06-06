@@ -8,10 +8,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -23,8 +22,8 @@ public class ReviewController {
     private final ReviewRepository reviewRepository;
 
     //public static final String JSON_NAME = "test.json";
-    public static final String REVIEW_JSON_NAME = "user_reviews_dict_normalized.json";
-    public static final String PLACE_JSON_NAME = "restaurant.json";
+    public static final String REVIEW_JSON_NAME = "/user_reviews_dict_normalized.json";
+    public static final String PLACE_JSON_NAME = "/restaurant.json";
 
     public static final String PLACE_REVIEW_JSON_NAME = "restaurant_review_dict.json";
     public void saveAll() {
@@ -41,11 +40,11 @@ public class ReviewController {
     }
 
     private Map<String, RestaurantList.RestaurantInfo> getRestaurants(ObjectMapper mapper) {
-        URL resource = getClass().getClassLoader().getResource(PLACE_JSON_NAME);
-        String filePath = resource.getFile();
         RestaurantList request = null;
-        try (FileReader fr = new FileReader(filePath);
-             BufferedReader br = new BufferedReader(fr)
+        System.out.println("==========================================================");
+        try (InputStream is = getClass().getResourceAsStream(PLACE_JSON_NAME);
+             InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
+             BufferedReader br = new BufferedReader(isr)
         ) {
             request = mapper.readValue(br, RestaurantList.class);
         } catch (IOException e) {
@@ -58,11 +57,10 @@ public class ReviewController {
     }
 
     private SaveAllRequest getSaveAllRequest(ObjectMapper mapper) {
-        URL resource = getClass().getClassLoader().getResource(REVIEW_JSON_NAME);
-        String filePath = resource.getFile();
         SaveAllRequest request = null;
-        try (FileReader fr = new FileReader(filePath);
-             BufferedReader br = new BufferedReader(fr)
+        try (InputStream is = getClass().getResourceAsStream(REVIEW_JSON_NAME);
+             InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
+             BufferedReader br = new BufferedReader(isr)
         ) {
             //request = new Gson().fromJson(br, SaveAllRequest.class);
             request = mapper.readValue(br, SaveAllRequest.class);
