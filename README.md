@@ -14,6 +14,9 @@
 
 ## 하현진
 - 크롤링
+- Docker 관련
+  - SpringBoot 프로젝트 Dockerfile 작성 및 설정 변경
+  - docker mysql과 연동을 위한 docker-compose 작성
 
 # 프로젝트 소개
 - 이 프로젝트는 진정한 맛집을 찾기 위한 프로젝트입니다.
