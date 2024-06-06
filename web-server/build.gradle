@@ -42,3 +42,7 @@ tasks.named('test') {
 jar {
     enabled = false
 }
+
+bootJar {
+    mainClass = 'com.example.webserver.WebServerApplication'
+}
